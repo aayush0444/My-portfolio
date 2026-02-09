@@ -7,7 +7,8 @@
         rel="stylesheet" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AKR</title>
+    <title>Aayush Kumar - Data Science Portfolio</title>
+    <meta name="description" content="Data Science portfolio of Aayush Kumar, IIT Jammu student specializing in ML, analytics, and AI solutions">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
 
@@ -17,58 +18,64 @@
 <body>
     <div id="main">
         <!-- ----------------- NAV ----------------- -->
-        <div id="nav">
+        <nav id="nav">
             <div id="name">
-                <i class="ri-color-filter-fill"></i>
+                <i class="ri-color-filter-fill" aria-hidden="true"></i>
                 <h1 style="color: #53dfd3;">A
-                    <h1>KR</h1>
+                    <span>KR</span>
                 </h1>
             </div>
             <div id="feature">
                 <ul>
-                    <li>HOME</li>
+                    <li><a href="#home" class="nav-link">HOME</a></li>
                     <li><a href="#About" class="nav-link">ABOUT</a></li>
                     <li><a href="#education" class="nav-link">EDUCATION</a></li>
                     <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
                     <li><a href="#skills" class="nav-link">SKILLS</a></li>
                     <li><a href="#techstack" class="nav-link">TECH STACK</a></li>
                     <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+                    <!-- ADDED: Competitions link -->
+                    <li><a href="#competitions" class="nav-link">COMPETITIONS</a></li>
                     <li><a href="#connect" class="nav-link">CONNECT</a></li>
                 </ul>
             </div>
-        </div>
+        </nav>
 
         <!-- ----------------- HOME ----------------- -->
         <div id="cursor"></div>
-        <DIV id="home-context">
+        <section id="home-context">
             <div>
-                <p id="lines" style="font-size:2.3rem; font-weight: 400;"></p>
-                <p id="lines" style="font-size: 2rem;">Turning raw data into powerful insights</p>
-                <p id="lines" style="font-size: 2rem;">Building ML models that predict, analyze, and transform</p>
+                <!-- FIXED: Changed duplicate id="lines" to class="intro-line" -->
+                <p id="typing-intro" class="intro-line" style="font-size:2.3rem; font-weight: 400;"></p>
+                <p class="intro-line" style="font-size: 2rem;">Turning raw data into actionable insights</p>
+                <p class="intro-line" style="font-size: 2rem;">Building ML models that predict, analyze, and transform</p>
             </div>
 
             <div id="my-image">
-                <img src="./assets/me.png" alt="err">
+                <img src="./assets/me.png" alt="Aayush Kumar - Data Scientist">
             </div>
-        </DIV>
+        </section>
 
         <!-- ----------------- ABOUT ----------------- -->
         <br>
-        <DIV id="about-me" style="font-size: 3rem;">About Me
+        <section id="about-me" style="font-size: 3rem;">About Me
             <div id="left-right-code-context">
                 <img src="https://media.istockphoto.com/id/1356760692/photo/code-made-of-golden-digits.webp?a=1&b=1&s=612x612&w=0&k=20&c=vZY6uWXtYAvy1mNIqJqXzfe-eojEqGUf5M2b0bnoTww="
-                    id="code-img" alt="err">
+                    id="code-img" alt="Code visualization">
+                <!-- IMPROVED: Professional, outcome-focused language -->
                 <p id="context-me" style="font-size: 1.3rem; line-height: 27px;">
-                    Data Scientist building ML solutions at IIT Jammu. Specialized in predictive modeling, data analytics, and deployment. Proficient in Python, machine learning frameworks, and business intelligence tools. 
-                    Currently advancing skills through IBM Data Science certification and IIT Kharagpur's Deep Learning program.
-                    Deployed projects: Recommendation engines, price prediction models, analytics dashboards. Kaggle competitor. Daily DSA practice. Looking for data science internships where I can deliver measurable impact.
+                    Data Science student at IIT Jammu building production-ready ML solutions. Specialized in predictive modeling, analytics, and deployment. Proficient in Python, scikit-learn, SQL, and business intelligence tools like Power BI.
+                    <br><br>
+                    Currently advancing through IBM's Data Science Professional Certificate and IIT Kharagpur's Deep Learning specialization to strengthen foundations in neural networks and advanced ML techniques.
+                    <br><br>
+                    Deployed projects include recommendation engines, price prediction models, and interactive analytics dashboards. Active on Kaggle. Practicing DSA daily. Seeking data science internships where technical skills drive measurable business impact.
                 </p>
             </div>
-        </DIV>
+        </section>
 
         <!-- ----------------- EDUCATION ----------------- -->
         <br><br><br><br><br>
-        <div id="education-content" style="font-size: 3rem; text-align: center;">Education
+        <section id="education-content" style="font-size: 3rem; text-align: center;">Education
             <div id="education-card">
                 <p>
                     Completed Class X with <span style="color:#53dfd3;">92.6%</span> from
@@ -80,43 +87,43 @@
                     at <span style="color:#53dfd3;">IIT Jammu</span>.
                 </p>
             </div>
-        </div>
+        </section>
 
         <!-- ----------------- EXPERIENCE & CERTIFICATIONS ----------------- -->
         <br><br><br><br><br>
         <h1 style="font-size: 3rem; text-align: center;">Experience & Certifications</h1>
         <br>
-        <div id="experience-section">
-            <div class="experience-card">
-                <div class="exp-icon">🎯</div>
+        <section id="experience-section">
+            <article class="experience-card">
+                <div class="exp-icon" aria-hidden="true">🎯</div>
                 <h2>Deloitte Australia</h2>
                 <h3>Data Analytics Job Simulation</h3>
                 <p>Completed comprehensive data analytics simulation focusing on real-world business scenarios, data cleaning, visualization, and strategic insights generation.</p>
-            </div>
+            </article>
 
-            <div class="experience-card">
-                <div class="exp-icon">✈️</div>
+            <article class="experience-card">
+                <div class="exp-icon" aria-hidden="true">✈️</div>
                 <h2>British Airways</h2>
                 <h3>Data Science Job Simulation</h3>
                 <p>Executed end-to-end data science projects including predictive modeling, customer behavior analysis, and machine learning implementation for aviation industry challenges.</p>
-            </div>
+            </article>
 
-            <div class="experience-card">
-                <div class="exp-icon">📊</div>
+            <article class="experience-card">
+                <div class="exp-icon" aria-hidden="true">📊</div>
                 <h2>IBM Professional Certificate</h2>
                 <h3>Data Science Course (In Progress)</h3>
                 <p>Currently pursuing IBM's comprehensive professional certification covering Python, data analysis, machine learning, SQL, data visualization, and applied data science methodologies.</p>
-            </div>
-        </div>
+            </article>
+        </section>
 
         <!-- ----------------- SKILLS ----------------- -->
         <br><br><br><br><br>
         <h1 style="font-size: 3rem;">Skills</h1>
         <br>
-        <div id="skills">
+        <section id="skills">
             <div id="analytics-content">
-                <div id="card-skill">Data analytics</div>
-                <div id="skill-content">
+                <div class="card-skill">Data Analytics</div>
+                <div class="skill-content">
                     <p style="max-width: 1000px; font-size: larger ; text-align: center;line-height: 27px;">
                         Skilled in extracting, cleaning, and analyzing datasets to uncover trends and insights.
                         Proficient with Python libraries such as
@@ -136,59 +143,63 @@
             </div>
 
             <div id="datascience-content">
-                <div id="card-skill">Data Science</div>
-                <div id="skill-content">
+                <div class="card-skill">Data Science</div>
+                <div class="skill-content">
                     <p style="max-width: 1000px; font-size: larger ; text-align: center;line-height: 27px;">
-                        Experienced in applying machine learning techniques to solve real-world problems.
-                        Built predictive models such as
-                        <span style="color:#53dfd3; font-weight:bold;">California Housing Price Prediction</span>,
-                        <span style="color:#53dfd3; font-weight:bold;">Movie Recommendation System</span>, and
-                        <span style="color:#53dfd3; font-weight:bold;">Iris Flower Classification</span>.
-                        Skilled in supervised learning, model evaluation, and leveraging Python libraries like
-                        Scikit-learn, Pandas, NumPy, and Matplotlib to develop and validate models.
-                        Passionate about using data science to deliver accurate and actionable insights.
+                        Experienced in building end-to-end machine learning pipelines, from data preprocessing to model
+                        deployment.
+                        Proficient with
+                        <span style="color:#53dfd3; font-weight:bold;">Scikit-learn</span>,
+                        <span style="color:#53dfd3; font-weight:bold;">TensorFlow</span>, and
+                        <span style="color:#53dfd3; font-weight:bold;">Keras</span>
+                        for developing predictive models, classification systems, and regression algorithms. Skilled in
+                        feature engineering, hyperparameter tuning, and model evaluation to achieve optimal performance.
+                        Actively applying data science to solve real-world problems through hands-on projects and Kaggle
+                        competitions.
                     </p>
                 </div>
             </div>
 
             <div id="genai-content">
-                <div id="card-skill">Gen AI</div>
-                <div id="skill-content">
+                <div class="card-skill">Gen AI</div>
+                <div class="skill-content">
                     <p style="max-width: 1000px; font-size: larger ; text-align: center;line-height: 27px;">
-                        Exploring the cutting-edge world of Generative AI and Large Language Models.
-                        Working with <span style="color:#53dfd3; font-weight:bold;">Google Gemini</span>,
-                        <span style="color:#53dfd3; font-weight:bold;">OpenAI APIs</span>, and
-                        <span style="color:#53dfd3; font-weight:bold;">prompt engineering</span> to build intelligent applications.
-                        Experienced in creating AI-powered tools for text summarization, data analysis automation, and natural language processing.
-                        Passionate about leveraging generative AI to solve complex problems and enhance productivity.
+                        Exploring generative AI technologies and large language models (LLMs) to build intelligent
+                        applications.
+                        Familiar with
+                        <span style="color:#53dfd3; font-weight:bold;">Google Gemini</span>,
+                        <span style="color:#53dfd3; font-weight:bold;">Prompt Engineering</span>, and
+                        <span style="color:#53dfd3; font-weight:bold;">AI-assisted development workflows</span>.
+                        Developed applications leveraging Gen AI for automation, summarization, and rapid prototyping.
+                        Interested in the intersection of traditional ML and generative models to create innovative
+                        solutions.
                     </p>
                 </div>
             </div>
-
-        </div>
+        </section>
 
         <!-- ----------------- TECH STACK ----------------- -->
         <br><br><br><br><br>
-        <h1 style="font-size: 3rem; padding-bottom: 40px;">Tech Stack</h1>
+        <h1 style="font-size: 3rem; text-align: center;">Tech Stack</h1>
+        <br>
         <div id="tech-stack">
-            <div id="stack-pics"><img src="./assets/Python.png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/C++ (CPlusPlus).png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/Anaconda.png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/MySQL.png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/Node.js.png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/Git.png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/GitHub.png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/Jupyter.png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/React.png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/Tailwind CSS.png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/Python.png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/HTML5.png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/CSS3.png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/scikit-learn.png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/Selenium.png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/NumPy.png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/Pandas.png" alt=""></div>
-            <div id="stack-pics"><img src="./assets/Matplotlib.png" alt=""></div>
+            <div class="stack-pics"><img src="./assets/C++ (CPlusPlus).png" alt="C++ Programming Language"></div>
+            <div class="stack-pics"><img src="./assets/Anaconda.png" alt="Anaconda"></div>
+            <div class="stack-pics"><img src="./assets/MySQL.png" alt="MySQL Database"></div>
+            <div class="stack-pics"><img src="./assets/Node.js.png" alt="Node.js"></div>
+            <div class="stack-pics"><img src="./assets/Git.png" alt="Git Version Control"></div>
+            <div class="stack-pics"><img src="./assets/GitHub.png" alt="GitHub"></div>
+            <div class="stack-pics"><img src="./assets/Jupyter.png" alt="Jupyter Notebook"></div>
+            <div class="stack-pics"><img src="./assets/React.png" alt="React Framework"></div>
+            <div class="stack-pics"><img src="./assets/Tailwind CSS.png" alt="Tailwind CSS"></div>
+            <div class="stack-pics"><img src="./assets/Python.png" alt="Python Programming Language"></div>
+            <div class="stack-pics"><img src="./assets/HTML5.png" alt="HTML5"></div>
+            <div class="stack-pics"><img src="./assets/CSS3.png" alt="CSS3"></div>
+            <div class="stack-pics"><img src="./assets/scikit-learn.png" alt="Scikit-learn"></div>
+            <div class="stack-pics"><img src="./assets/Selenium.png" alt="Selenium"></div>
+            <div class="stack-pics"><img src="./assets/NumPy.png" alt="NumPy"></div>
+            <div class="stack-pics"><img src="./assets/Pandas.png" alt="Pandas"></div>
+            <div class="stack-pics"><img src="./assets/Matplotlib.png" alt="Matplotlib"></div>
         </div>
 
         <!-- ----------------- PROJECTS ----------------- -->
@@ -198,121 +209,179 @@
         <!-- Tabs -->
         <div id="projects-Title">
             <div class="heading-card" onclick="showProjects('analytics')">
-                <h1>Data Analytics</h1>
+                <h2>Data Analytics</h2>
             </div>
             <div class="heading-card" onclick="showProjects('science')">
-                <h1>Data Science</h1>
+                <h2>Data Science</h2>
             </div>
             <div class="heading-card" onclick="showProjects('genai')">
-                <h1>Gen AI</h1>
+                <h2>Gen AI</h2>
             </div>
         </div>
 
         <br><br><br><br><br>
 
-        <div id="projects">
+        <section id="projects">
             <!-- Data Analytics -->
             <div class="project-category" id="analytics-projects">
-                <div id="project-text">
-                    <h1>IPL Auction Dashboard</h1>
+                <!-- IMPROVED: Professional, outcome-focused descriptions -->
+                <article class="project-text">
+                    <h2>IPL Auction Dashboard</h2>
                     <p style="line-height: 27px;">
-                        Built a sick IPL auction tracker that shows which players got bagged by which team and for how much. Used SQL magic with Python to dig out the real tea on team spending, player stats, and auction trends. Created clean visuals that actually make sense of all that cricket chaos.
+                        Interactive Power BI dashboard analyzing IPL auction data to track player acquisitions, team spending patterns, and bidding trends. Integrated SQL queries with Python for data extraction and transformation, delivering clear visualizations that surface key insights from complex auction dynamics.
                     </p>
-                    <button id="code-btn"
+                    <button class="code-btn"
                         onclick="window.open('https://github.com/aayush0444/IPL-Auction-Dashboard/blob/main/IPL%20DASHBOARD.pdf', '_blank')">
-                        Github Link</button>
-                        <button id="code-btn"
+                        GitHub Link</button>
+                    <button class="code-btn"
                         onclick="window.open('https://app.powerbi.com/groups/me/reports/96cf512d-ee03-4df5-80ba-9e8cc51b8111/69b04aa0490ff5dfc47d?experience=power-bi', '_blank')">
-                        WEB Link</button>
-                </div>
+                        Live Dashboard</button>
+                </article>
 
-                <div id="project-text">
-                    <h1>Finance Dashboard</h1>
+                <article class="project-text">
+                    <h2>Finance Dashboard</h2>
                     <p style="line-height: 27px;">
-                        Turned messy financial data into a slick interactive dashboard that tracks revenue, expenses, and profits like a boss. Power BI + Excel combo made it super easy to spot money trends and make data-backed decisions that actually matter.
+                        Built an interactive financial analytics dashboard combining Power BI and Excel to track revenue, expenses, and profit margins. Enables real-time trend analysis and data-driven financial decision-making through intuitive visualizations and dynamic filtering.
                     </p>
-                    <button id="code-btn" onclick="window.open('https://github.com/aayush0444/Finance-Dashboard')">
-                        Github Link</button>
-                </div>
+                    <button class="code-btn" onclick="window.open('https://github.com/aayush0444/Finance-Dashboard', '_blank')">
+                        GitHub Link</button>
+                </article>
 
-                <div id="project-text">
-                    <h1>Pizza Sales Dashboard</h1>
+                <article class="project-text">
+                    <h2>Pizza Sales Dashboard</h2>
                     <p style="line-height: 27px;">
-                        Created a dashboard that literally shows what pizzas are killing it and when people are ordering the most. SQL pulled the data, Power BI made it look fire. Now you can see exactly which toppings are trending and when to stock up.
+                        Developed a sales performance dashboard identifying top-selling products and peak ordering patterns. Leveraged SQL for data aggregation and Power BI for visualization, providing actionable insights on product trends and optimal inventory management.
                     </p>
-                    <button id="code-btn" onclick="window.open('https://github.com/aayush0444/Pizza-Dashboard')">
-                        Github Link</button>
-                </div>
-              
-               
+                    <button class="code-btn" onclick="window.open('https://github.com/aayush0444/Pizza-Dashboard', '_blank')">
+                        GitHub Link</button>
+                </article>
             </div>
 
             <!-- Data Science -->
             <div class="project-category" id="science-projects" style="display:none;">
-                <div id="project-text">
-                    <h1>Movie Recommendation System</h1>
+                <article class="project-text">
+                    <h2>Movie Recommendation System</h2>
                     <p style="line-height: 27px;">
-                        Built a Netflix-style recommendation engine that actually gets your vibe. Using collaborative filtering and cosine similarity, it suggests movies based on what you've watched before. It's like having a friend who knows your taste but better.
+                        Built a content-based recommendation engine using collaborative filtering and cosine similarity to suggest personalized movie recommendations. Deployed as a Streamlit web application, enabling real-time recommendations based on user viewing history and preferences.
                     </p>
-                    <div id="display-btn">
-                        <button id="code-btn"
-                            onclick="window.open('https://github.com/aayush0444/Movie-Recommendation-System')">
-                            Github Link</button>
-                        <button id="code-btn"
-                            onclick="window.open('https://movie-recommendation-system-e9es8hxjqm5rtpbok9it6x.streamlit.app/')">
-                            WEB-Link</button>
+                    <div class="display-btn">
+                        <button class="code-btn"
+                            onclick="window.open('https://github.com/aayush0444/Movie-Recommendation-System', '_blank')">
+                            GitHub Link</button>
+                        <button class="code-btn"
+                            onclick="window.open('https://movie-recommendation-system-e9es8hxjqm5rtpbok9it6x.streamlit.app/', '_blank')">
+                            Live Demo</button>
                     </div>
+                </article>
 
-                </div>
-
-                <div id="project-text">
-                    <h1>Laptop Value Pro</h1>
+                <article class="project-text">
+                    <h2>Laptop Value Pro</h2>
                     <p style="line-height: 27px;">
-                        Created an ML model that predicts laptop prices with scary accuracy. Trained on 1000+ configs using gradient boosting, feature engineering, and all that good stuff with Scikit-learn. Now you can tell if that laptop deal is actually worth it.
+                        Machine learning model predicting laptop prices based on hardware specifications. Trained on 1000+ configurations using gradient boosting and feature engineering with scikit-learn. Deployed as an interactive Streamlit app to help users evaluate laptop pricing and value.
                     </p>
-                    <button id="code-btn"
-                        onclick="window.open('https://github.com/aayush0444/Laptop-value-pro')">Github
+                    <button class="code-btn"
+                        onclick="window.open('https://github.com/aayush0444/Laptop-value-pro', '_blank')">GitHub
                         Link</button>
-                    <button id="code-btn"
-                            onclick="window.open('https://aayush0444-laptop-value-pro-app-mprvmd.streamlit.app/')">
-                            WEB-Link</button>
-                </div>
+                    <button class="code-btn"
+                        onclick="window.open('https://aayush0444-laptop-value-pro-app-mprvmd.streamlit.app/', '_blank')">
+                        Live Demo</button>
+                </article>
             </div>
 
             <!-- Gen AI -->
             <div class="project-category" id="genai-projects" style="display:none;">
-                <div id="project-text">
-                    <h1>AutoBrief Using Gemini</h1>
+                <article class="project-text">
+                    <h2>AutoBrief Using Gemini</h2>
                     <p style="line-height: 27px;">
-                        Built an AI tool that reads through massive datasets or long documents and spits out the key insights in seconds. Powered by Google Gemini, it's like having an AI assistant that does the boring reading for you and tells you what actually matters.
+                        AI-powered document summarization tool leveraging Google Gemini to extract key insights from large datasets and lengthy documents. Automates the process of information extraction and synthesis, delivering concise summaries in seconds.
                     </p>
-                    <button id="code-btn"
-                        onclick="window.open('https://github.com/aayush0444/AutoBrief-using-Gemini')">Github
+                    <button class="code-btn"
+                        onclick="window.open('https://github.com/aayush0444/AutoBrief-using-Gemini', '_blank')">GitHub
                         Link</button>
-                </div>
+                </article>
             </div>
-        </div>
-        <!-- footer starts -->
+        </section>
 
+        <!-- ----------------- COMPETITIONS & CHALLENGES (NEW SECTION) ----------------- -->
+        <br><br><br><br><br>
+        <h1 style="font-size: 3rem; padding-bottom: 40px;">Competitions & Challenges</h1>
+
+        <section id="competitions">
+            <!-- Competition 1: PMx 2026 -->
+            <article class="competition-card">
+                <div class="competition-header">
+                    <div class="comp-icon" aria-hidden="true">🎯</div>
+                    <div class="comp-title-group">
+                        <h2>PMx 2026 – The Product Management Expedition</h2>
+                        <h3>Business Model Challenge Participant</h3>
+                    </div>
+                </div>
+                <div class="competition-content">
+                    <p class="comp-scale">Participated among ~2,600 teams nationwide</p>
+                    <p class="comp-description">
+                        Developed and submitted a comprehensive business model presentation addressing product-market fit, monetization strategy, and go-to-market planning. The competition challenged participants to demonstrate strategic thinking and product management fundamentals through detailed business case analysis.
+                    </p>
+                    <div class="comp-tags">
+                        <span class="tag">Product Strategy</span>
+                        <span class="tag">Business Modeling</span>
+                        <span class="tag">Market Analysis</span>
+                    </div>
+                    <button class="code-btn" onclick="window.open('./assets/team_product_x.pdf', '_blank')">
+                        View Submission (PDF)</button>
+                </div>
+            </article>
+
+            <!-- Competition 2: Mattr AI App Challenge -->
+            <article class="competition-card competition-winner">
+                <div class="competition-header">
+                    <div class="comp-icon comp-winner-icon" aria-hidden="true">🏆</div>
+                    <div class="comp-title-group">
+                        <h2>Mattr AI App Challenge – 2nd Runner-Up</h2>
+                        <h3>₹5,000 Cash Prize Winner</h3>
+                    </div>
+                </div>
+                <div class="competition-content">
+                    <p class="comp-achievement">Secured 2nd Runner-Up position and ₹5,000 prize</p>
+                    <p class="comp-description">
+                        Conceptualized and prototyped a mobile application using Mattr's AI-powered no-code platform. The workflow involved translating a product idea into structured prompts, leveraging AI code generation to build a functional prototype. This challenge emphasized product thinking, prompt engineering, and rapid prototyping with AI-assisted tools rather than traditional manual coding.
+                    </p>
+                    <div class="comp-tags">
+                        <span class="tag">AI-Assisted Development</span>
+                        <span class="tag">Prompt Engineering</span>
+                        <span class="tag">Rapid Prototyping</span>
+                        <span class="tag">Product Design</span>
+                    </div>
+                    <div class="display-btn">
+                        <button class="code-btn" onclick="window.open('https://service-hub-mobile-app-237753.withmattr.app/', '_blank')">
+                            Live Prototype</button>
+                    </div>
+                    <p class="comp-disclaimer">
+                        <em>Note: App built using AI-assisted no-code builder (Mattr platform)</em>
+                    </p>
+                </div>
+            </article>
+        </section>
+
+        <!-- ----------------- CONNECT ----------------- -->
         <br><br><br><br><br>
         <h1 style="font-size: 3rem; padding-bottom: 40px;">Connect</h1>
-        <div id="connect">
+        <section id="connect">
             <p style="font-size: 1.5rem; text-align: center; margin-bottom: 20px;">
-                Feel free to reach out via any of the platforms below:
+                Open to data science internships and collaboration opportunities
             </p>
             <div id="connect-links">
-                <a href="https://github.com/aayush0444/" target="_blank" class="connect-link">GitHub</a>
-                <a href="https://www.linkedin.com/in/aayush-kumar-b81794320/" target="_blank"
+                <a href="https://github.com/aayush0444/" target="_blank" rel="noopener noreferrer" class="connect-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/aayush-kumar-b81794320/" target="_blank" rel="noopener noreferrer"
                     class="connect-link">LinkedIn</a>
-                <a href="mailto:aayushkumar5777@gmail.com" class="connect-link">Email: aayushkumar5777@gmail.com</a>
+                <a href="mailto:aayush0444@gmail.com" class="connect-link">Email</a>
             </div>
-        </div>
+        </section>
+
         <br><br>
         <footer id="footer">
             <p>© 2025 Aayush Kumar. All rights reserved.</p>
-            <p>Crafted with care and passion for data Science,Bussiness Analytics, and innovation.</p>
+            <p>Crafted with care and passion for data science</p>
         </footer>
-
     </div>
 
     <script src="./assets/script.js"></script>
