@@ -1,91 +1,101 @@
-let body=document.querySelector('body');
-
-let crsr = document.getElementById('cursor');
-
-// Smoother cursor movement using transform
-body.addEventListener('mousemove', function(dets) {
-    crsr.style.transform = `translate(${dets.clientX - crsr.offsetWidth/2}px, ${dets.clientY - crsr.offsetHeight/2}px)`;
-});
-
-// Smooth scrolling to the view
-document.querySelector('a[href="#About"]').addEventListener('click',function(event){
-    event.preventDefault();
-    document.getElementById('about-me').scrollIntoView({behavior:"smooth"})
-})
-
-document.querySelector('a[href="#education"]').addEventListener('click',function(event){
-    event.preventDefault();
-    document.getElementById('education-content').scrollIntoView({behavior:"smooth"})
-})
-
-document.querySelector('a[href="#experience"]').addEventListener('click',function(event){
-    event.preventDefault();
-    document.getElementById('experience-section').scrollIntoView({behavior:"smooth"})
-})
-
-document.querySelector('a[href="#skills"]').addEventListener('click',function(event){
-    event.preventDefault();
-    document.getElementById('skills').scrollIntoView({behavior:"smooth"})
-})
-
-document.querySelector('a[href="#techstack"]').addEventListener('click',function(event){
-    event.preventDefault();
-    document.getElementById('tech-stack').scrollIntoView({behavior:"smooth"})
-})
-
-document.querySelector('a[href="#projects"]').addEventListener('click',function(event){
-    event.preventDefault();
-    document.getElementById('projects').scrollIntoView({behavior:"smooth"})
-})
-
-// ADDED: Smooth scrolling for new Competitions section
-document.querySelector('a[href="#competitions"]').addEventListener('click',function(event){
-    event.preventDefault();
-    document.getElementById('competitions').scrollIntoView({behavior:"smooth"})
-})
-
-document.querySelector('a[href="#connect"]').addEventListener('click',function(event){
-    event.preventDefault();
-    document.getElementById('connect').scrollIntoView({behavior:"smooth"})
-})
-
-// Home link smooth scroll
-const homeLink = document.querySelector('a[href="#home"]');
-if (homeLink) {
-    homeLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        document.getElementById('home-context').scrollIntoView({behavior:"smooth"})
-    })
-}
-
-// FIXED: Changed selector from duplicate id to unique id
-window.addEventListener("DOMContentLoaded", function() {
-    let line = document.querySelector('#typing-intro'); // Changed from '#home-context p#lines'
-    if(!line) return;
-
-    const text = "Hello, I'm Aayush Kumar.";
-    line.textContent = '';
-    let i = 0;
-
-    function type() {
-        if (i < text.length) {
-            line.style.fontSize ="4rem";
-            line.style.fontWeight = "bold";
-            line.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, 70); 
-        }
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // ==================== CURSOR FUNCTIONALITY ====================
+    const body = document.querySelector('body');
+    const crsr = document.getElementById('cursor');
+    
+    if (crsr) {
+        // Smoother cursor movement using transform
+        body.addEventListener('mousemove', function(dets) {
+            crsr.style.transform = `translate(${dets.clientX - crsr.offsetWidth/2}px, ${dets.clientY - crsr.offsetHeight/2}px)`;
+        });
     }
 
-    type(); 
+    // ==================== SMOOTH SCROLLING ====================
+    const scrollLinks = {
+        'About': 'about-me',
+        'education': 'education-content',
+        'experience': 'experience-section',
+        'skills': 'skills',
+        'techstack': 'tech-stack',
+        'projects': 'projects',
+        'competitions': 'competitions',
+        'connect': 'connect',
+        'home': 'home-context'
+    };
+
+    // Add smooth scroll listeners for all navigation links
+    Object.keys(scrollLinks).forEach(linkHash => {
+        const link = document.querySelector(`a[href="#${linkHash}"]`);
+        const target = document.getElementById(scrollLinks[linkHash]);
+        
+        if (link && target) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                target.scrollIntoView({behavior: "smooth"});
+            });
+        }
+    });
+
+    // ==================== TYPING ANIMATION ====================
+    const typingElement = document.querySelector('#typing-intro');
+    if (typingElement) {
+        const text = "Hello, I'm Aayush Kumar.";
+        typingElement.textContent = '';
+        let i = 0;
+
+        function type() {
+            if (i < text.length) {
+                typingElement.style.fontSize = "4rem";
+                typingElement.style.fontWeight = "bold";
+                typingElement.textContent += text.charAt(i);
+                i++;
+                setTimeout(type, 70); 
+            }
+        }
+
+        type();
+    }
+
+    // ==================== PROJECT TABS INITIALIZATION ====================
+    // Show Data Analytics projects by default on page load
+    const defaultTab = 'analytics';
+    const defaultProject = document.getElementById(`${defaultTab}-projects`);
+    if (defaultProject) {
+        defaultProject.style.display = "block";
+    }
 });
 
+// ==================== PROJECT TAB SWITCHING (Global function) ====================
 function showProjects(category) {
-    // Hide all categories
-    document.querySelectorAll('.project-category').forEach(div => {
+    // Hide all project categories
+    const allCategories = document.querySelectorAll('.project-category');
+    allCategories.forEach(div => {
         div.style.display = "none";
     });
 
-    // Show only the selected one
-    document.getElementById(category + '-projects').style.display = "block";
+    // Show the selected category
+    const selectedCategory = document.getElementById(category + '-projects');
+    if (selectedCategory) {
+        selectedCategory.style.display = "block";
+    }
+
+    // Add active state to clicked tab (optional visual feedback)
+    const allTabs = document.querySelectorAll('.heading-card');
+    allTabs.forEach(tab => {
+        tab.classList.remove('active-tab');
+    });
+    
+    // Find and activate the clicked tab
+    const categoryMap = {
+        'analytics': 0,
+        'science': 1,
+        'genai': 2
+    };
+    
+    const tabIndex = categoryMap[category];
+    if (tabIndex !== undefined && allTabs[tabIndex]) {
+        allTabs[tabIndex].classList.add('active-tab');
+    }
 }

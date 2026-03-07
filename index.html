@@ -34,7 +34,6 @@
                     <li><a href="#skills" class="nav-link">SKILLS</a></li>
                     <li><a href="#techstack" class="nav-link">TECH STACK</a></li>
                     <li><a href="#projects" class="nav-link">PROJECTS</a></li>
-                    <!-- ADDED: Competitions link -->
                     <li><a href="#competitions" class="nav-link">COMPETITIONS</a></li>
                     <li><a href="#connect" class="nav-link">CONNECT</a></li>
                 </ul>
@@ -45,14 +44,13 @@
         <div id="cursor"></div>
         <section id="home-context">
             <div>
-                <!-- FIXED: Changed duplicate id="lines" to class="intro-line" -->
                 <p id="typing-intro" class="intro-line" style="font-size:2.3rem; font-weight: 400;"></p>
                 <p class="intro-line" style="font-size: 2rem;">Turning raw data into actionable insights</p>
                 <p class="intro-line" style="font-size: 2rem;">Building ML models that predict, analyze, and transform</p>
             </div>
 
             <div id="my-image">
-                <img src="./assets/mine.jpeg" alt="Aayush Kumar - Data Scientist">
+                <img src="./assets/me.png" alt="Aayush Kumar - Data Scientist">
             </div>
         </section>
 
@@ -62,7 +60,6 @@
             <div id="left-right-code-context">
                 <img src="https://media.istockphoto.com/id/1356760692/photo/code-made-of-golden-digits.webp?a=1&b=1&s=612x612&w=0&k=20&c=vZY6uWXtYAvy1mNIqJqXzfe-eojEqGUf5M2b0bnoTww="
                     id="code-img" alt="Code visualization">
-                <!-- IMPROVED: Professional, outcome-focused language -->
                 <p id="context-me" style="font-size: 1.3rem; line-height: 27px;">
                     Data Science student at IIT Jammu building production-ready ML solutions. Specialized in predictive modeling, analytics, and deployment. Proficient in Python, scikit-learn, SQL, and business intelligence tools like Power BI.
                     <br><br>
@@ -133,27 +130,30 @@
                         <span style="color:#53dfd3; font-weight:bold;">Seaborn</span>, along with
                         <span style="color:#53dfd3; font-weight:bold;">SQL</span> and
                         <span style="color:#53dfd3; font-weight:bold;">Power BI</span>, to transform raw data into
-                        actionable visualizations.
+                        <span style="color:#53dfd3; font-weight:bold;">actionable visualizations</span>.
+                        <br><br>
                         Experienced in building dashboards, performing exploratory data analysis (EDA), and generating
-                        reports
+                        <span style="color:#53dfd3; font-weight:bold;">reports</span>
                         that support decision-making. Passionate about turning complex datasets into clear,
-                        data-driven strategies.
+                        <span style="color:#53dfd3; font-weight:bold;">data-driven strategies</span>.
                     </p>
                 </div>
             </div>
 
-            <div id="datascience-content">
+            <div id="science-content">
                 <div class="card-skill">Data Science</div>
                 <div class="skill-content">
                     <p style="max-width: 1000px; font-size: larger ; text-align: center;line-height: 27px;">
                         Experienced in building end-to-end machine learning pipelines, from data preprocessing to model
-                        deployment.
+                        <span style="color:#53dfd3; font-weight:bold;">deployment</span>.
+                        <br><br>
                         Proficient with
                         <span style="color:#53dfd3; font-weight:bold;">Scikit-learn</span>,
                         <span style="color:#53dfd3; font-weight:bold;">TensorFlow</span>, and
                         <span style="color:#53dfd3; font-weight:bold;">Keras</span>
                         for developing predictive models, classification systems, and regression algorithms. Skilled in
-                        feature engineering, hyperparameter tuning, and model evaluation to achieve optimal performance.
+                        <span style="color:#53dfd3; font-weight:bold;">feature engineering, hyperparameter tuning</span>, and model evaluation to achieve optimal performance.
+                        <br><br>
                         Actively applying data science to solve real-world problems through hands-on projects and Kaggle
                         competitions.
                     </p>
@@ -166,10 +166,12 @@
                     <p style="max-width: 1000px; font-size: larger ; text-align: center;line-height: 27px;">
                         Exploring generative AI technologies and large language models (LLMs) to build intelligent
                         applications.
+                        <br><br>
                         Familiar with
                         <span style="color:#53dfd3; font-weight:bold;">Google Gemini</span>,
                         <span style="color:#53dfd3; font-weight:bold;">Prompt Engineering</span>, and
                         <span style="color:#53dfd3; font-weight:bold;">AI-assisted development workflows</span>.
+                        <br><br>
                         Developed applications leveraging Gen AI for automation, summarization, and rapid prototyping.
                         Interested in the intersection of traditional ML and generative models to create innovative
                         solutions.
@@ -180,7 +182,7 @@
 
         <!-- ----------------- TECH STACK ----------------- -->
         <br><br><br><br><br>
-        <h1 style="font-size: 3rem; text-align: center;">Tech Stack</h1>
+        <h1 style="font-size: 3rem; padding-bottom: 40px;">Tech Stack</h1>
         <br>
         <div id="tech-stack">
             <div class="stack-pics"><img src="./assets/C++ (CPlusPlus).png" alt="C++ Programming Language"></div>
@@ -224,18 +226,19 @@
         <section id="projects">
             <!-- Data Analytics -->
             <div class="project-category" id="analytics-projects">
-                <!-- IMPROVED: Professional, outcome-focused descriptions -->
                 <article class="project-text">
                     <h2>IPL Auction Dashboard</h2>
                     <p style="line-height: 27px;">
                         Interactive Power BI dashboard analyzing IPL auction data to track player acquisitions, team spending patterns, and bidding trends. Integrated SQL queries with Python for data extraction and transformation, delivering clear visualizations that surface key insights from complex auction dynamics.
                     </p>
-                    <button class="code-btn"
-                        onclick="window.open('https://github.com/aayush0444/IPL-Auction-Dashboard/blob/main/IPL%20DASHBOARD.pdf', '_blank')">
-                        GitHub Link</button>
-                    <button class="code-btn"
-                        onclick="window.open('https://app.powerbi.com/groups/me/reports/96cf512d-ee03-4df5-80ba-9e8cc51b8111/69b04aa0490ff5dfc47d?experience=power-bi', '_blank')">
-                        Live Dashboard</button>
+                    <div class="display-btn">
+                        <button class="code-btn"
+                            onclick="window.open('https://github.com/aayush0444/IPL-Auction-Dashboard/blob/main/IPL%20DASHBOARD.pdf', '_blank')">
+                            GitHub Link</button>
+                        <button class="code-btn"
+                            onclick="window.open('https://app.powerbi.com/groups/me/reports/96cf512d-ee03-4df5-80ba-9e8cc51b8111/69b04aa0490ff5dfc47d?experience=power-bi', '_blank')">
+                            Live Dashboard</button>
+                    </div>
                 </article>
 
                 <article class="project-text">
@@ -266,10 +269,10 @@
                     </p>
                     <div class="display-btn">
                         <button class="code-btn"
-                            onclick="window.open('https://github.com/aayush0444/Movie-Recommendation-System', '_blank')">
+                            onclick="window.open('https://github.com/aayush0444/Cine-Suggest', '_blank')">
                             GitHub Link</button>
                         <button class="code-btn"
-                            onclick="window.open('https://movie-recommendation-system-e9es8hxjqm5rtpbok9it6x.streamlit.app/', '_blank')">
+                            onclick="window.open('https://cine-suggest-01.streamlit.app/', '_blank')">
                             Live Demo</button>
                     </div>
                 </article>
@@ -279,30 +282,37 @@
                     <p style="line-height: 27px;">
                         Machine learning model predicting laptop prices based on hardware specifications. Trained on 1000+ configurations using gradient boosting and feature engineering with scikit-learn. Deployed as an interactive Streamlit app to help users evaluate laptop pricing and value.
                     </p>
-                    <button class="code-btn"
-                        onclick="window.open('https://github.com/aayush0444/Laptop-value-pro', '_blank')">GitHub
-                        Link</button>
-                    <button class="code-btn"
-                        onclick="window.open('https://aayush0444-laptop-value-pro-app-mprvmd.streamlit.app/', '_blank')">
-                        Live Demo</button>
+                    <div class="display-btn">
+                        <button class="code-btn"
+                            onclick="window.open('https://github.com/aayush0444/Laptop-value-pro', '_blank')">GitHub
+                            Link</button>
+                        <button class="code-btn"
+                            onclick="window.open('https://aayush0444-laptop-value-pro-app-mprvmd.streamlit.app/', '_blank')">
+                            Live Demo</button>
+                    </div>
                 </article>
             </div>
 
             <!-- Gen AI -->
             <div class="project-category" id="genai-projects" style="display:none;">
                 <article class="project-text">
-                    <h2>AutoBrief Using Gemini</h2>
+                    <h2>NotionClip - Smart Meeting Transcriber</h2>
                     <p style="line-height: 27px;">
-                        AI-powered document summarization tool leveraging Google Gemini to extract key insights from large datasets and lengthy documents. Automates the process of information extraction and synthesis, delivering concise summaries in seconds.
+                        An intelligent meeting assistant that transforms video recordings into actionable insights. Upload MP4 meeting files or provide YouTube URLs to automatically extract key information, identify assigned tasks, set due dates, and seamlessly sync everything to Notion workspaces. Powered by Google Gemini AI, LangChain, and Notion API for end-to-end automation of meeting documentation and task management.
                     </p>
-                    <button class="code-btn"
-                        onclick="window.open('https://github.com/aayush0444/AutoBrief-using-Gemini', '_blank')">GitHub
-                        Link</button>
+                    <div class="display-btn">
+                        <button class="code-btn"
+                            onclick="window.open('https://github.com/aayush0444/Notion-Clips', '_blank')">
+                            GitHub Link</button>
+                        <button class="code-btn"
+                            onclick="window.open('https://notionclip.streamlit.app/', '_blank')">
+                            Live Demo</button>
+                    </div>
                 </article>
             </div>
         </section>
 
-        <!-- ----------------- COMPETITIONS & CHALLENGES (NEW SECTION) ----------------- -->
+        <!-- ----------------- COMPETITIONS & CHALLENGES ----------------- -->
         <br><br><br><br><br>
         <h1 style="font-size: 3rem; padding-bottom: 40px;">Competitions & Challenges</h1>
 
@@ -384,6 +394,7 @@
         </footer>
     </div>
 
+    <!-- FIXED: Script loaded at the end to ensure DOM is ready -->
     <script src="./assets/script.js"></script>
 </body>
 
