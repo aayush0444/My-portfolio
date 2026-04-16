@@ -287,14 +287,15 @@ body {
 }
 
 #analytics-content,
-#datascience-content,
+#science-content,
 #genai-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 18px;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 18px;
+    margin-top: 0;
 }
 
 /* FIXED: Changed from id to class */
