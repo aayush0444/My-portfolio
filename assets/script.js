@@ -221,29 +221,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // =============================================
-    // 9. STAT COUNT-UP
+    // 9. STAT COUNT-UP (no plugins required)
     // =============================================
     gsap.utils.toArray('.stat-number').forEach(el => {
         const raw = el.textContent.trim();
         const numeric = parseFloat(raw.replace(/[^0-9.]/g, ''));
-        if (isNaN(numeric)) return;
+        if (isNaN(numeric) || numeric === 0) return;
 
         const prefix = raw.match(/^[^\d]*/)?.[0] || '';
         const suffix = raw.match(/[^\d.]+$/)?.[0] || '';
 
-        gsap.from(el, {
-            textContent: 0,
-            duration: 1.4,
-            ease: 'power1.inOut',
-            snap: { textContent: 1 },
-            stagger: 1,
-            scrollTrigger: {
-                trigger: el,
-                start: 'top 85%',
-                toggleActions: 'play none none none'
-            },
-            onUpdate: function() {
-                el.textContent = prefix + Math.round(this.targets()[0].textContent) + suffix;
+        // Keep the suffix/prefix while counting up (e.g. ₹5K, 230+)
+        el.textContent = `${prefix}0${suffix}`;
+        const counter = { value: 0 };
+
+        ScrollTrigger.create({
+            trigger: el,
+            start: 'top 85%',
+            once: true,
+            onEnter: () => {
+                gsap.to(counter, {
+                    value: numeric,
+                    duration: 1.4,
+                    ease: 'power3.out',
+                    onUpdate: () => {
+                        el.textContent = `${prefix}${Math.round(counter.value)}${suffix}`;
+                    },
+                    onComplete: () => {
+                        el.textContent = `${prefix}${Math.round(numeric)}${suffix}`;
+                    }
+                });
             }
         });
     });
