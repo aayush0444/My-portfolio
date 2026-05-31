@@ -8,56 +8,68 @@ document.addEventListener('DOMContentLoaded', function() {
     // Register GSAP plugins
     gsap.registerPlugin(ScrollTrigger);
 
+    const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
     // =============================================
     // 1. DUAL CURSOR — dot + inertia ring
     // =============================================
     const oldCursor = document.getElementById('cursor');
     if (oldCursor) oldCursor.style.display = 'none';
 
-    let dot = document.getElementById('cursor-dot');
-    let ring = document.getElementById('cursor-ring');
+    let dot = null;
+    let ring = null;
 
-    if (!dot) {
-        dot = document.createElement('div');
-        dot.id = 'cursor-dot';
-        document.body.appendChild(dot);
-    }
+    if (isFinePointer) {
+        dot = document.getElementById('cursor-dot');
+        ring = document.getElementById('cursor-ring');
 
-    if (!ring) {
-        ring = document.createElement('div');
-        ring.id = 'cursor-ring';
-        document.body.appendChild(ring);
-    }
+        if (!dot) {
+            dot = document.createElement('div');
+            dot.id = 'cursor-dot';
+            document.body.appendChild(dot);
+        }
 
-    let mx = -200, my = -200;
-    let rx = -200, ry = -200;
+        if (!ring) {
+            ring = document.createElement('div');
+            ring.id = 'cursor-ring';
+            document.body.appendChild(ring);
+        }
 
-    document.addEventListener('mousemove', e => {
-        mx = e.clientX;
-        my = e.clientY;
-    });
+        let mx = -200, my = -200;
+        let rx = -200, ry = -200;
 
-    gsap.ticker.add(() => {
-        if (dot && ring) {
-            gsap.to(dot, { duration: 0.15, x: mx, y: my });
-            
+        document.addEventListener('mousemove', e => {
+            mx = e.clientX;
+            my = e.clientY;
+        });
+
+        const moveDotX = gsap.quickTo(dot, 'x', { duration: 0.15, ease: 'power3.out' });
+        const moveDotY = gsap.quickTo(dot, 'y', { duration: 0.15, ease: 'power3.out' });
+        const moveRingX = gsap.quickTo(ring, 'x', { duration: 0.35, ease: 'power3.out' });
+        const moveRingY = gsap.quickTo(ring, 'y', { duration: 0.35, ease: 'power3.out' });
+
+        gsap.ticker.add(() => {
+            moveDotX(mx);
+            moveDotY(my);
+
             rx += (mx - rx) * 0.10;
             ry += (my - ry) * 0.10;
-            gsap.to(ring, { duration: 0.35, x: rx - 19, y: ry - 19 });
-        }
-    });
+            moveRingX(rx - 19);
+            moveRingY(ry - 19);
+        });
 
-    const HOVER_TARGETS = 'a, button, .project-item, .skill-cell, .card, .stack-tag, .cta-primary, .connect-link, .heading-card';
-    document.querySelectorAll(HOVER_TARGETS).forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            gsap.to(dot, { duration: 0.2, width: '10px', height: '10px' });
-            gsap.to(ring, { duration: 0.3, width: '64px', height: '64px', borderColor: 'rgba(204,255,0,0.9)', background: 'rgba(204,255,0,0.04)' });
+        const HOVER_TARGETS = 'a, button, .project-item, .skill-cell, .card, .stack-tag, .cta-primary, .connect-link, .heading-card';
+        document.querySelectorAll(HOVER_TARGETS).forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                gsap.to(dot, { duration: 0.2, width: '10px', height: '10px' });
+                gsap.to(ring, { duration: 0.3, width: '64px', height: '64px', borderColor: 'rgba(204,255,0,0.9)', background: 'rgba(204,255,0,0.04)' });
+            });
+            el.addEventListener('mouseleave', () => {
+                gsap.to(dot, { duration: 0.2, width: '6px', height: '6px' });
+                gsap.to(ring, { duration: 0.3, width: '38px', height: '38px', borderColor: 'rgba(204,255,0,0.45)', background: 'transparent' });
+            });
         });
-        el.addEventListener('mouseleave', () => {
-            gsap.to(dot, { duration: 0.2, width: '6px', height: '6px' });
-            gsap.to(ring, { duration: 0.3, width: '38px', height: '38px', borderColor: 'rgba(204,255,0,0.45)', background: 'transparent' });
-        });
-    });
+    }
 
     // =============================================
     // 2. TYPING ANIMATION
@@ -188,37 +200,41 @@ document.addEventListener('DOMContentLoaded', function() {
     // =============================================
     // 7. PROJECT ITEMS — left accent line reveal
     // =============================================
-    document.querySelectorAll('.project-item').forEach(item => {
-        const line = document.createElement('span');
-        line.style.cssText = `
-            position: absolute; left: 0; top: 0; width: 2px; height: 0;
-            background: #CCFF00; pointer-events: none;
-        `;
-        item.appendChild(line);
+    if (isFinePointer) {
+        document.querySelectorAll('.project-item').forEach(item => {
+            const line = document.createElement('span');
+            line.style.cssText = `
+                position: absolute; left: 0; top: 0; width: 2px; height: 0;
+                background: #CCFF00; pointer-events: none;
+            `;
+            item.appendChild(line);
 
-        item.addEventListener('mouseenter', () => { gsap.to(line, { duration: 0.45, height: '100%', ease: 'power3.out' }); });
-        item.addEventListener('mouseleave', () => { gsap.to(line, { duration: 0.45, height: '0%', ease: 'power3.out' }); });
-    });
+            item.addEventListener('mouseenter', () => { gsap.to(line, { duration: 0.45, height: '100%', ease: 'power3.out' }); });
+            item.addEventListener('mouseleave', () => { gsap.to(line, { duration: 0.45, height: '0%', ease: 'power3.out' }); });
+        });
+    }
 
     // =============================================
     // 8. SKILL CELLS — bottom-up fill on hover
     // =============================================
-    document.querySelectorAll('.skill-cell').forEach(cell => {
-        const fill = document.createElement('span');
-        fill.style.cssText = `
-            position: absolute; inset: 0; background: #0a0a0a;
-            transform: translateY(100%); pointer-events: none; z-index: 0;
-        `;
-        cell.appendChild(fill);
+    if (isFinePointer) {
+        document.querySelectorAll('.skill-cell').forEach(cell => {
+            const fill = document.createElement('span');
+            fill.style.cssText = `
+                position: absolute; inset: 0; background: #0a0a0a;
+                transform: translateY(100%); pointer-events: none; z-index: 0;
+            `;
+            cell.appendChild(fill);
 
-        Array.from(cell.children).forEach(child => {
-            if (child !== fill) child.style.position = 'relative';
-            if (child !== fill) child.style.zIndex = '1';
+            Array.from(cell.children).forEach(child => {
+                if (child !== fill) child.style.position = 'relative';
+                if (child !== fill) child.style.zIndex = '1';
+            });
+
+            cell.addEventListener('mouseenter', () => { gsap.to(fill, { duration: 0.5, yPercent: 0, ease: 'power3.out' }); });
+            cell.addEventListener('mouseleave', () => { gsap.to(fill, { duration: 0.5, yPercent: 100, ease: 'power3.out' }); });
         });
-
-        cell.addEventListener('mouseenter', () => { gsap.to(fill, { duration: 0.5, yPercent: 0, ease: 'power3.out' }); });
-        cell.addEventListener('mouseleave', () => { gsap.to(fill, { duration: 0.5, yPercent: 100, ease: 'power3.out' }); });
-    });
+    }
 
     // =============================================
     // 9. STAT COUNT-UP (no plugins required)
